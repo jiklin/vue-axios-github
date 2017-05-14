@@ -32,8 +32,7 @@
                     </div>
                 </md-card-content>
                 <md-card-actions>
-                    <md-button>View Detail</md-button>
-
+                    <md-button target="_blank" :href="repo.html_url">View Detail</md-button>
                 </md-card-actions>
             </md-card>
         </md-layout>
