@@ -11,9 +11,15 @@
                         </svg>
                     </a>
                     <span class="md-title title">{{title}}</span>
+                    <span><weather></weather></span>
                 </div>
               <div class="right">
-                <a v-on:click="logout"  class=" md-default" v-show="token">logout</a>
+                <md-button 
+                    @click.native="logout" 
+                    v-if="token" 
+                    class="md-icon-button md-dense">
+                    <md-icon>power_settings_new</md-icon>
+                </md-button>
               </div>
             </div>
         </md-toolbar>
@@ -25,7 +31,11 @@
 <script>
     import * as types from './store/types'
     import {mapState} from 'vuex'
+    import weather from './component/weather.vue'
     export default {
+        components: {
+            weather
+        },
         name: 'app',
         data () {
             return {
